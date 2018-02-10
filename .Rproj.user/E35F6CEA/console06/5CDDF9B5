@@ -1,0 +1,57 @@
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ [K]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ sudo docker run --rm -p 8000:8000 -v `pwd`/plumbber.R:/plumber.R trestletech/plumber /plumber.R
+[sudo] password for rstudio: 
+ARGUMENT '/plumber.R' __ignored__
+
+
+R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)
+Starting server to listen on port 8000
+^C
+Execution halted
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ sudo docker run --rm -p 8000:8000 -v `pwd`/plumbber.R:/plumber.R trestletech/plumber /plumber.R
+[sudo] password for rstudio: 
+ARGUMENT '/plumber.R' __ignored__
+
+
+R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)
+Starting server to listen on port 8000
+Warning in min(x) : no non-missing arguments to min; returning Inf
+Warning in max(x) : no non-missing arguments to max; returning -Inf
+Warning in min(x) : no non-missing arguments to min; returning Inf
+Warning in max(x) : no non-missing arguments to max; returning -Inf
+<simpleError in plot.window(...): need finite 'xlim' values>

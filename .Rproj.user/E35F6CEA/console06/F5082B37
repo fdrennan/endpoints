@@ -1,0 +1,31 @@
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ [K]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ echo "# endpoints" >> README.md
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git init
+ennan/endpoints.git
+git push -u origin masterInitialized empty Git repository in /home/rstudio/r_projects/endpoints/.git/
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git add README.md
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git commit -m "first commit"
+[master (root-commit) d65fa1c] first commit
+ Committer: Freddy <rstudio@ip-172-31-19-217.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git remote add origin git@github.com:fdrennan/e ndpoints.git
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git push -u origin master
+Counting objects: 3, done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 243 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:fdrennan/endpoints.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+]0;/home/rstudio/r_projects/endpoints]0;rstudio@ip-172-31-19-217: ~/r_projects/endpoints[01;32mrstudio@ip-172-31-19-217[00m:[01;34m~/r_projects/endpoints[00m$ git add --all
