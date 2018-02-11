@@ -35,3 +35,30 @@ function(spec){
   plot(myData$Sepal.Length, myData$Petal.Length,
        main=title, xlab="Sepal Length", ylab="Petal Length")
 }
+
+#' Plot out data from the iris dataset
+#' @param days If provided, filter the data to only this species (e.g. 'setosa')
+#' @get /weather
+#' @jpeg (width=2^10 + 1)
+function(days = 7){
+  library(drentools)
+  library(lubridate)
+  
+  weather <- 
+    retrieve_data('focoWeather') %>% 
+    as.data.frame()
+  
+  weather <- 
+    weather %>% 
+    select(temp, time) %>% 
+    mutate(day = day(time)) %>% 
+    filter(time > Sys.Date() - days)
+  
+  gg <- 
+    ggplot(weather) +
+    aes(x = time, y = temp, colour = as.factor(day)) +
+    geom_line() +
+    ggtitle(paste0('Ft. Collins Temp over paste', days, ' days.'))
+  
+  print(gg)
+}
