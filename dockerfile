@@ -49,7 +49,7 @@ RUN R -e "install.packages('tidyverse')"
 RUN R -e "install.packages('mongolite')"
 RUN R -e "install.packages('RPostgreSQL')"
 
-RUN R -e 'devtools::install_github("fdrennan/drentools", auth_token = "beda78d1173e1ca724904856969a255890431efd")'
+RUN R -e 'devtools::install_github("fdrennan/drentools", auth_token = "58699f5b22c7ea74e474e187b61a263f65508cc3")'
 
 EXPOSE 8000
 ENTRYPOINT ["R", "-e", "pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)"]

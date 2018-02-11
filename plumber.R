@@ -1,5 +1,7 @@
 # plumber.R
-
+library(drentools)
+library(tidyverse)
+library(lubridate)
 #* @get /mean
 normalMean <- function(n=100, string = 'I love Meggan!'){
   a = rep(string, n)
@@ -41,11 +43,11 @@ function(spec){
 #' @get /weather
 #' @jpeg (width=2^10 + 1)
 function(days = 7){
-  library(drentools)
-  library(lubridate)
+  
+  days = as.numeric(days)
   
   weather <- 
-    retrieve_data('focoWeather') %>% 
+    drentools::retrieve_data('focoWeather') %>% 
     as.data.frame()
   
   weather <- 
@@ -58,7 +60,46 @@ function(days = 7){
     ggplot(weather) +
     aes(x = time, y = temp, colour = as.factor(day)) +
     geom_line() +
-    ggtitle(paste0('Ft. Collins Temp over paste', days, ' days.'))
+    ggtitle(paste0('Ft. Collins Temp over past ', days, ' days.'))
   
   print(gg)
+}
+
+#' @get /hello
+#' @html
+function(){
+  paste0("<html><h1>hello world</h1></html>")
+}
+
+#' @get /type/<id>
+function(id){
+  list(
+    id = id,
+    type = typeof(id)
+  )
+}
+
+users <- data.frame(
+  uid=c(12,13),
+  username=c("kim", "john")
+)
+
+#' Lookup a user
+#' @get /users/<id>
+function(id){
+  subset(users, uid==id)
+}
+
+#' @get /food
+search <- function(q="", pretty=0){
+  paste0("The q parameter is '", q, "'. ",
+         "The pretty parameter is '", pretty, "'.")
+}
+
+#' @get /scrape
+scrape <- function(link, table=1){
+  table = as.numeric(table)
+  site <- rvest::html(link)
+  site <- rvest::html_table(site, fill=TRUE)
+  site[[table]]
 }
