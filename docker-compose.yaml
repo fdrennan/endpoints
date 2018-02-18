@@ -23,7 +23,7 @@ services:
       depends_on:
        - app1
   lb:
-      image: 'dockercloud/haproxy:1.2.1'
+      image: 'dockercloud/haproxy:latest'
       links:
        - app1
       volumes:
