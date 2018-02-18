@@ -16,6 +16,14 @@ services:
     restart: always
     ports:
      - "8001:8000"
+  rstudio:
+    image: rocker/rstudio
+    command: /app/plumber.R
+    volumes:
+     - .:/app
+    restart: always
+    ports:
+     - "8787:8787"
   nginx:
       image: nginx:1.9
       ports:
