@@ -6,12 +6,6 @@ services:
     volumes:
      - .:/app
     restart: always
-  app2:
-    image: fdrennan/plumber
-    command: /app/plumber.R
-    volumes:
-     - .:/app
-    restart: always
   rstudio:
     image: rocker/rstudio
     volumes:
@@ -28,7 +22,7 @@ services:
       restart: always
       depends_on:
        - app1
-       - app2
+       - rstudio
   lb:
       image: 'dockercloud/haproxy:1.2.1'
       links:
