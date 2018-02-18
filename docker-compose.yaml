@@ -14,7 +14,7 @@ services:
     ports:
      - "8787:8787"
   nginx:
-      image: nginx:latest
+      image: nginx:1.9
       ports:
        - "80:80"
       volumes:
@@ -23,7 +23,7 @@ services:
       depends_on:
        - app1
   lb:
-      image: 'dockercloud/haproxy:latest'
+      image: 'dockercloud/haproxy:1.2.1'
       links:
        - app1
       volumes:
