@@ -29,3 +29,9 @@ services:
       depends_on:
        - app1
        - app2
+  lb:
+      image: 'dockercloud/haproxy:1.2.1'
+      links:
+       - app1
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
