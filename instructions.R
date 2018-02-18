@@ -3,6 +3,8 @@
 # sudo docker container ls
 # sudo docker stop fc8f265f279bfc8f265f279b
 # sudo siege 52.14.83.204/mean?n=1000 -b -t30s
+# /etc/nginx/conf.d
+# sudo systemctl restart nginx
 
 campaignPacing
 advertiserPacing
