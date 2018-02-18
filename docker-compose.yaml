@@ -18,7 +18,6 @@ services:
      - "8001:8000"
   rstudio:
     image: rocker/rstudio
-    command: /app/plumber.R
     volumes:
      - .:/app
     restart: always
