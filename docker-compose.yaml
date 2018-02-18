@@ -1,13 +1,7 @@
 version: '2'
 services:
   app1:
-    image: fdrennan/plumber
-    command: /app/plumber.R
-    volumes:
-     - .:/app
-    restart: always
-  app2:
-    image: fdrennan/plumber
+    image: dockerfile
     command: /app/plumber.R
     volumes:
      - .:/app
@@ -28,4 +22,3 @@ services:
       restart: always
       depends_on:
        - app1
-       - app2
