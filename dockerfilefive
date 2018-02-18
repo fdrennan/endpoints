@@ -49,7 +49,7 @@ RUN R -e "install.packages('tidyverse')"
 RUN R -e "install.packages('mongolite')"
 RUN R -e "install.packages('RPostgreSQL')"
 RUN R -e "install.packages('rollbar')"
-
+RUN R -e "devtools::install_version("mongolite", version = "0.7", repos = "http://cran.us.r-project.org")"
 RUN R -e 'devtools::install_github("fdrennan/drentools", auth_token = "01c3e427280d5441f5f2b830bd2a15e8dd80c39f")'
 
 EXPOSE 8000

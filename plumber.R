@@ -2,11 +2,13 @@
 library(drentools)
 library(tidyverse)
 library(lubridate)
+
 #* @get /mean
 normalMean <- function(n=100, string = 'I love Meggan!'){
   a = rep(string, n)
   as.vector(a)
 }
+
 
 #* @get /sum
 addTwo <- function(a=10, b=10){
@@ -38,13 +40,29 @@ function(spec){
        main=title, xlab="Sepal Length", ylab="Petal Length")
 }
 
+#' Generate a friendly error
+#' @get /friendly
+function(res){
+  msg <- "Your request did not include a required parameter."
+  res$status <- 400 # Bad request
+  list(error=jsonlite::unbox(msg))
+}
+
+
 #' Plot out data from the iris dataset
 #' @param days If provided, filter the data to only this species (e.g. 'setosa')
 #' @get /weather
 #' @jpeg (width=2^10 + 1)
-function(days = 7){
-  
+weather = function(days = 7){
+
   days = as.numeric(days)
+  if(days > 30) {
+    
+    days = 30
+  }
+  # rollbar.attached()
+
+  
   
   weather <- 
     drentools::retrieve_data('focoWeather') %>% 
