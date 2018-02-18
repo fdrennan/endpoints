@@ -6,6 +6,24 @@ services:
     volumes:
      - .:/app
     restart: always
+    ports:
+     - "8000:8000"       
+  app2:
+    image: dockerfile
+    command: /app/plumber.R
+    volumes:
+     - .:/app
+    restart: always
+    ports:
+     - "8001:8000"       
+  app3:
+    image: dockerfile
+    command: /app/plumber.R
+    volumes:
+     - .:/app
+    restart: always  
+    ports:
+     - "8002:8000"    
   rstudio:
     image: rocker/rstudio
     volumes:
@@ -13,12 +31,3 @@ services:
     restart: always
     ports:
      - "8787:8787"
-  nginx:
-      image: nginx:1.9
-      ports:
-       - "80:80"
-      volumes:
-       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      restart: always
-      depends_on:
-       - app1
