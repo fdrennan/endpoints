@@ -22,7 +22,6 @@ services:
       restart: always
       depends_on:
        - app1
-       - rstudio
   lb:
       image: 'dockercloud/haproxy:1.2.1'
       links:
