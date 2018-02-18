@@ -6,12 +6,16 @@ services:
     volumes:
      - .:/app
     restart: always
+    ports:
+     - "8000:8000"
   app2:
     image: fdrennan/plumber
     command: /app/plumber.R
     volumes:
      - .:/app
     restart: always
+    ports:
+     - "8001:8000"
   rstudio:
     image: rocker/rstudio
     volumes:
