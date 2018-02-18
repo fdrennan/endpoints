@@ -1,6 +1,7 @@
 # plumber.R
 library(drentools)
-library(tidyverse)
+library(ggplot2)
+library(magrittr)
 library(lubridate)
 
 #* @get /mean

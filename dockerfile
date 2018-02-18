@@ -52,6 +52,5 @@ RUN R -e "install.packages('rollbar')"
 
 RUN R -e 'devtools::install_github("fdrennan/drentools", auth_token = "01c3e427280d5441f5f2b830bd2a15e8dd80c39f")'
 
-EXPOSE 8000
 ENTRYPOINT ["R", "-e", "pr <- plumber::plumb(commandArgs()[4]); pr$run(host='0.0.0.0', port=8000)"]
 CMD ["/app/plumber.R"]
