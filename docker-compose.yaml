@@ -14,7 +14,7 @@ services:
     ports:
      - "8787:8787"
   nginx:
-      image: nginx:1.9
+      image: nginx:latest
       ports:
        - "80:80"
       volumes:
